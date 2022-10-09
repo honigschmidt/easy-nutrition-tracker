@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EasyNutritionTracker</string>
+    <string name="button_add_calories">ADD CALORIES</string>
+    <string name="button_add_carbs">ADD CARBS</string>
+    <string name="button_reset_daily_values">RESET</string>
+    <string name="button_clear_input_fields">CLEAR</string>
+    <string name="text_init_showcalories">0  kcal</string>
+    <string name="text_init_showcarbs">0  g</string>
+    <string name="error_empty_input_calories">Please enter a valid value!</string>
+    <string name="error_empty_input_carbs">Please enter a valid value!</string>
+</resources>
