@@ -1,15 +1,17 @@
 // Simple utility to track calorie and carbohydrate intake
 //
 // Version history:
-// 2022-10-07 v0.1 Initial test release
-// 2022-10-09 v0.2  + Variables are saved to disk
-//                  + RESET button has to be held to function
+// 2022-10-07 v0.1   Initial test release
+// 2022-10-09 v0.2   + Variables are saved to disk
+//                   + RESET button has to be held to function
+// 2022-10-10 v0.21  + Screen orientation locked to portrait (code & manifest)
 
 package com.example.easynutritiontracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -119,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         preferences = getPreferences(MODE_PRIVATE);
 
