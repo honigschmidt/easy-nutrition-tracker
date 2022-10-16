@@ -7,10 +7,10 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.easynutritiontracker"
+        applicationId 'com.coffeemonster.easynutritiontracker'
         minSdk 21
         targetSdk 32
-        versionCode 1
+        versionCode 4
         versionName '0.21'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

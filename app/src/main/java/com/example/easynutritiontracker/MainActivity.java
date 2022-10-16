@@ -2,12 +2,13 @@
 //
 // Version history:
 // 2022-10-07 v0.1   Initial test release
-// 2022-10-09 v0.2   + Variables are saved to disk
-//                   + RESET button has to be held to function
-// 2022-10-10 v0.21  + Screen orientation locked to portrait (code & manifest)
+// 2022-10-09 v0.2   ADD Variables are saved to disk
+//                   ADD RESET button has to be held to function
+// 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
 
 package com.example.easynutritiontracker;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
