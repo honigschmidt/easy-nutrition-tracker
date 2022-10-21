@@ -5,6 +5,8 @@
 // 2022-10-09 v0.2   ADD Variables are saved to disk
 //                   ADD RESET button has to be held to function
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
+//
+// TODO: Auto-clear input fields after entering value & remove "CLEAR INPUT" button
 
 package com.example.easynutritiontracker;
 
