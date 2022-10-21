@@ -7,12 +7,11 @@
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
 //
 // TODO: Auto-clear input fields after entering value & remove "CLEAR INPUT" button
+// TODO: Add ADD_ALL button to add both calories & carbs
 
 package com.example.easynutritiontracker;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -24,11 +23,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences preferences;
     private int calories;
     private int carbs;
-
-    SharedPreferences preferences;
-
     private TextView showCalories;
     private TextView showCarbs;
 
@@ -39,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Button addCarbs;
     private Button clearInputFields;
     private Button resetDailyValues;
+    private Button addAll;
 
     public void loadVariables() {
         Log.d("myDebug", "loadVariables");
@@ -68,9 +66,13 @@ public class MainActivity extends AppCompatActivity {
         addCarbs = findViewById(R.id.button_addCarbs);
         clearInputFields = findViewById(R.id.button_clearInputFields);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
+        addAll = findViewById(R.id.button_addAll);
 
         showCalories.setText(String.valueOf(calories) + " kcal");
         showCarbs.setText(String.valueOf(carbs) + " g");
+
+        inputCalories.setCursorVisible(false);
+        inputCarbs.setCursorVisible(false);
 
         addCalories.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         addCarbs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try  {
+                try {
                     carbs += Integer.parseInt(inputCarbs.getText().toString());
                     showCarbs.setText(String.valueOf(carbs) + " g");
                     saveVariables();
@@ -115,6 +117,28 @@ public class MainActivity extends AppCompatActivity {
                 showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
                 saveVariables();
                 return true;
+            }
+        });
+
+        addAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    calories += Integer.parseInt(inputCalories.getText().toString());
+                    showCalories.setText(String.valueOf(calories) + " kcal");
+                    inputCalories.getText().clear();
+                    saveVariables();
+                } catch (Exception e) {
+                    // inputCalories.setError(getResources().getString(R.string.error_empty_input_calories));
+                }
+                try {
+                    carbs += Integer.parseInt(inputCarbs.getText().toString());
+                    showCarbs.setText(String.valueOf(carbs) + " g");
+                    inputCarbs.getText().clear();
+                    saveVariables();
+                } catch (Exception e) {
+                    // inputCarbs.setError(getResources().getString(R.string.error_empty_input_carbs));
+                }
             }
         });
     }

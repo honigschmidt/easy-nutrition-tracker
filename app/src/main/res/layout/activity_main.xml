@@ -14,6 +14,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_showCarbs" />
 
@@ -68,6 +69,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_inputCalories" />
 
@@ -92,5 +94,15 @@
         android:text="@string/button_clear_input_fields"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_addCarbs" />
+
+    <Button
+        android:id="@+id/button_addAll"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/button_add_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_resetDailyValues" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
