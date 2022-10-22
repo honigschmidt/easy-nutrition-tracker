@@ -74,20 +74,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     calories += Integer.parseInt(inputCalories.getText().toString());
-                    showCalories.setText(String.valueOf(calories) + " kcal");
-                    inputCalories.getText().clear();
-                    saveVariables();
                 } catch (Exception e) {
-                    // inputCalories.setError(getResources().getString(R.string.error_empty_input_calories));
+                    calories += 0;
                 }
+                showCalories.setText(String.valueOf(calories) + " kcal");
+                inputCalories.getText().clear();
+
                 try {
                     carbs += Integer.parseInt(inputCarbs.getText().toString());
-                    showCarbs.setText(String.valueOf(carbs) + " g");
-                    inputCarbs.getText().clear();
-                    saveVariables();
                 } catch (Exception e) {
-                    // inputCarbs.setError(getResources().getString(R.string.error_empty_input_carbs));
+                    carbs += 0;
                 }
+                showCarbs.setText(String.valueOf(carbs) + " g");
+                inputCarbs.getText().clear();
+
+                saveVariables();
             }
         });
 
