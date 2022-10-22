@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/hint_enter_calories"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,24 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_showCalories" />
 
-    <Button
-        android:id="@+id/button_addCalories"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/button_add_calories"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text_inputCalories"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/button_addCarbs"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/button_add_carbs"
-        app:layout_constraintBaseline_toBaselineOf="@+id/text_inputCarbs"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <EditText
         android:id="@+id/text_inputCarbs"
         android:layout_width="150dp"
@@ -68,6 +51,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/hint_enter_carbs"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,26 +67,16 @@
         android:text="@string/button_reset_daily_values"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_clearInputFields" />
-
-    <Button
-        android:id="@+id/button_clearInputFields"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/button_clear_input_fields"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_addCarbs" />
+        app:layout_constraintTop_toBottomOf="@+id/button_addAll" />
 
     <Button
         android:id="@+id/button_addAll"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/button_add_all"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_resetDailyValues" />
+        app:layout_constraintTop_toBottomOf="@+id/text_showCarbs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

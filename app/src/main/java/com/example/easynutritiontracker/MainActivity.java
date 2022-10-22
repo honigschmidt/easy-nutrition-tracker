@@ -5,9 +5,7 @@
 // 2022-10-09 v0.2   ADD Variables are saved to disk
 //                   ADD RESET button has to be held to function
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
-//
-// TODO: Auto-clear input fields after entering value & remove "CLEAR INPUT" button
-// TODO: Add ADD_ALL button to add both calories & carbs
+// 2022-10-22 v0.22  GUI improvements
 
 package com.example.easynutritiontracker;
 
@@ -62,63 +60,14 @@ public class MainActivity extends AppCompatActivity {
         inputCalories = findViewById(R.id.text_inputCalories);
         inputCarbs = findViewById(R.id.text_inputCarbs);
 
-        addCalories = findViewById(R.id.button_addCalories);
-        addCarbs = findViewById(R.id.button_addCarbs);
-        clearInputFields = findViewById(R.id.button_clearInputFields);
-        resetDailyValues = findViewById(R.id.button_resetDailyValues);
         addAll = findViewById(R.id.button_addAll);
+        resetDailyValues = findViewById(R.id.button_resetDailyValues);
 
         showCalories.setText(String.valueOf(calories) + " kcal");
         showCarbs.setText(String.valueOf(carbs) + " g");
 
         inputCalories.setCursorVisible(false);
         inputCarbs.setCursorVisible(false);
-
-        addCalories.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    calories += Integer.parseInt(inputCalories.getText().toString());
-                    showCalories.setText(String.valueOf(calories) + " kcal");
-                    saveVariables();
-                } catch (Exception e) {
-                    inputCalories.setError(getResources().getString(R.string.error_empty_input_calories));
-                }
-            }
-        });
-
-        addCarbs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    carbs += Integer.parseInt(inputCarbs.getText().toString());
-                    showCarbs.setText(String.valueOf(carbs) + " g");
-                    saveVariables();
-                } catch (Exception e) {
-                    inputCarbs.setError(getResources().getString(R.string.error_empty_input_carbs));
-                }
-            }
-        });
-
-        clearInputFields.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                inputCalories.getText().clear();
-                inputCarbs.getText().clear();
-            }
-        });
-
-        resetDailyValues.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                calories = 0;
-                carbs = 0;
-                showCalories.setText(getResources().getString(R.string.text_init_showcalories));
-                showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
-                saveVariables();
-                return true;
-            }
-        });
 
         addAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     // inputCarbs.setError(getResources().getString(R.string.error_empty_input_carbs));
                 }
+            }
+        });
+
+        resetDailyValues.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                calories = 0;
+                carbs = 0;
+                showCalories.setText(getResources().getString(R.string.text_init_showcalories));
+                showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
+                saveVariables();
+                return true;
             }
         });
     }

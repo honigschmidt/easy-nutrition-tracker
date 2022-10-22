@@ -10,5 +10,7 @@
     <string name="error_empty_input_carbs">Please enter a valid value!</string>
     <string name="saved_calories">savedCalories</string>
     <string name="saved_carbs">savedCarbs</string>
-    <string name="button_add_all">ADD ALL</string>
+    <string name="button_add_all">ADD</string>
+    <string name="hint_enter_calories">Calories</string>
+    <string name="hint_enter_carbs">Carbs</string>
 </resources>
