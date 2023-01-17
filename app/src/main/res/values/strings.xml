@@ -13,4 +13,6 @@
     <string name="button_add_all">ADD</string>
     <string name="hint_enter_calories">Calories</string>
     <string name="hint_enter_carbs">Carbs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

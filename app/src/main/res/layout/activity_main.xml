@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.EasyNutritionTracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/text_inputCalories"
+        android:id="@+id/editText_enterCalories"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_showCalories" />
 
     <EditText
-        android:id="@+id/text_inputCarbs"
+        android:id="@+id/editText_enterCarbs"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,7 +56,7 @@
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_inputCalories" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_enterCalories" />
 
     <Button
         android:id="@+id/button_resetDailyValues"

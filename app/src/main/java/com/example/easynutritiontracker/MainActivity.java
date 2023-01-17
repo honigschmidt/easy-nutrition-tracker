@@ -5,7 +5,7 @@
 // 2022-10-09 v0.2   ADD Variables are saved to disk
 //                   ADD RESET button has to be held to function
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
-// 2022-10-22 v0.22  GUI improvements
+// 2022-10-22 v0.22  ADD GUI improvements
 
 package com.example.easynutritiontracker;
 
@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputCalories;
     private EditText inputCarbs;
 
-    private Button addCalories;
-    private Button addCarbs;
-    private Button clearInputFields;
     private Button resetDailyValues;
     private Button addAll;
 
@@ -57,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         showCalories = findViewById(R.id.text_showCalories);
         showCarbs = findViewById(R.id.text_showCarbs);
 
-        inputCalories = findViewById(R.id.text_inputCalories);
-        inputCarbs = findViewById(R.id.text_inputCarbs);
+        inputCalories = findViewById(R.id.editText_enterCalories);
+        inputCarbs = findViewById(R.id.editText_enterCarbs);
 
         addAll = findViewById(R.id.button_addAll);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
