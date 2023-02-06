@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void runGUI() {
 
-        showCalories = findViewById(R.id.text_showCalories);
-        showCarbs = findViewById(R.id.text_showCarbs);
+        showCalories = findViewById(R.id.textView_showCalories);
+        showCarbs = findViewById(R.id.textView_showCarbs);
 
         inputCalories = findViewById(R.id.editText_enterCalories);
         inputCarbs = findViewById(R.id.editText_enterCarbs);
