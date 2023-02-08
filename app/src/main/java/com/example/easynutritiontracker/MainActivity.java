@@ -21,9 +21,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
+    private SharedPreferences preferences;
     private int calories;
     private int carbs;
+
     private TextView showCalories;
     private TextView showCarbs;
 
