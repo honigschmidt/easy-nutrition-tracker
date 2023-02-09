@@ -4,7 +4,7 @@
     <string name="button_clear_input_fields">CLEAR INPUT</string>
     <string name="text_init_showcalories">0  kcal</string>
     <string name="text_init_showcarbs">0  g</string>
-    <string name="text_init_showfluids">0  l</string>
+    <string name="text_init_showfluids">0  ml</string>
     <string name="saved_calories">savedCalories</string>
     <string name="saved_carbs">savedCarbs</string>
     <string name="saved_fluids">savedFluids</string>

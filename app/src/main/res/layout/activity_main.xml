@@ -85,7 +85,7 @@
     <Button
         android:id="@+id/button_addAll"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/button_add_all"
@@ -95,7 +95,7 @@
     <Button
         android:id="@+id/button_resetDailyValues"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#D81B60"

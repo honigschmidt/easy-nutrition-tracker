@@ -6,14 +6,19 @@
 //                   ADD RESET button has to be held to function
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
 // 2022-10-22 v0.22  ADD GUI improvements
+// 2023-02-09 v0.3   ADD Daily fluid intake
 
 package com.example.easynutritiontracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         showCalories.setText(String.valueOf(calories) + " kcal");
         showCarbs.setText(String.valueOf(carbs) + " g");
-        showFluids.setText(String.valueOf(fluids) + " l");
+        showFluids.setText(String.valueOf(fluids) + " ml");
 
         inputCalories.setCursorVisible(false);
         inputCarbs.setCursorVisible(false);
@@ -99,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     fluids += 0;
                 }
-                showFluids.setText(String.valueOf(fluids) + " g");
+                showFluids.setText(String.valueOf(fluids) + " ml");
                 inputFluids.getText().clear();
 
                 saveVariables();
@@ -133,5 +138,14 @@ public class MainActivity extends AppCompatActivity {
 
         loadVariables();
         runGUI();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }
