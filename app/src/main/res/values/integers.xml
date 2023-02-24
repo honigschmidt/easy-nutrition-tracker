@@ -2,4 +2,5 @@
 <resources>
     <integer name="default_calories">0</integer>>
     <integer name="default_carbs">0</integer>>
+    <integer name="default_fluids">0</integer>>
 </resources>
