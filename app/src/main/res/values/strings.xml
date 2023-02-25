@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">EasyNutritionTracker</string>
-    <string name="text_init_showcalories">0  kcal</string>
-    <string name="text_init_showcarbs">0  g</string>
-    <string name="text_init_showfluids">0  ml</string>
+    <string name="text_init_showcalories">0</string>
+    <string name="text_init_showcarbs">0</string>
+    <string name="text_init_showfluids">0</string>
     <string name="saved_calories">savedCalories</string>
     <string name="saved_carbs">savedCarbs</string>
     <string name="saved_fluids">savedFluids</string>

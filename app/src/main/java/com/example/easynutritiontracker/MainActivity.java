@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
         addDailyValues = findViewById(R.id.button_addDailyValues);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
 
-        showCalories.setText(String.valueOf(calories) + " kcal");
-        showCarbs.setText(String.valueOf(carbs) + " g");
-        showFluids.setText(String.valueOf(fluids) + " ml");
+        showCalories.setText(String.valueOf(calories));
+        showCarbs.setText(String.valueOf(carbs));
+        showFluids.setText(String.valueOf(fluids));
 
         inputCalories.setCursorVisible(false);
         inputCarbs.setCursorVisible(false);
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     calories += 0;
                 }
-                showCalories.setText(String.valueOf(calories) + " kcal");
+                showCalories.setText(String.valueOf(calories));
                 inputCalories.getText().clear();
 
                 try {
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     carbs += 0;
                 }
-                showCarbs.setText(String.valueOf(carbs) + " g");
+                showCarbs.setText(String.valueOf(carbs));
                 inputCarbs.getText().clear();
 
                 try {
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     fluids += 0;
                 }
-                showFluids.setText(String.valueOf(fluids) + " ml");
+                showFluids.setText(String.valueOf(fluids));
                 inputFluids.getText().clear();
 
                 saveVariables();
