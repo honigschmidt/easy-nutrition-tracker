@@ -1,4 +1,5 @@
-// Simple utility to track calorie and carbohydrate intake
+//
+// Simple utility to track nutrition intake
 //
 // Version history:
 // 2022-10-07 v0.1   Initial test release
@@ -7,6 +8,7 @@
 // 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
 // 2022-10-22 v0.22  ADD GUI improvements
 // 2023-02-09 v0.3   ADD Daily fluid intake
+//
 
 package com.example.easynutritiontracker;
 
@@ -26,9 +28,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
-    private int calories;
-    private int carbs;
-    private int fluids;
+    private Integer calories;
+    private Integer carbs;
+    private Integer fluids;
 
     private TextView showCalories;
     private TextView showCarbs;
@@ -38,17 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputCarbs;
     private EditText inputFluids;
 
+    private Button addDailyValues;
     private Button resetDailyValues;
-    private Button addAll;
 
     public void loadVariables() {
-//        Log.d("myDebug", "loadVariables");
-        int defaultCalories = getResources().getInteger(R.integer.default_calories);
-        int defaultCarbs = getResources().getInteger(R.integer.default_carbs);
-        int defaultFluids = getResources().getInteger(R.integer.default_fluids);
-        calories = sharedPreferences.getInt(getString(R.string.saved_calories), defaultCalories);
-        carbs = sharedPreferences.getInt(getString(R.string.saved_carbs), defaultCarbs);
-        fluids = sharedPreferences.getInt(getString(R.string.saved_fluids), defaultFluids);
+        calories = sharedPreferences.getInt(getResources().getString(R.string.saved_calories), getResources().getInteger(R.integer.default_calories));
+        carbs = sharedPreferences.getInt(getResources().getString(R.string.saved_carbs), getResources().getInteger(R.integer.default_carbs));
+        fluids = sharedPreferences.getInt(getResources().getString(R.string.saved_fluids), getResources().getInteger(R.integer.default_fluids));
     }
 
     public void saveVariables() {
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         inputCarbs = findViewById(R.id.editText_enterCarbs);
         inputFluids = findViewById(R.id.editText_enterFluids);
 
-        addAll = findViewById(R.id.button_addAll);
+        addDailyValues = findViewById(R.id.button_addDailyValues);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
 
         showCalories.setText(String.valueOf(calories) + " kcal");
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         inputCarbs.setCursorVisible(false);
         inputFluids.setCursorVisible(false);
 
-        addAll.setOnClickListener(new View.OnClickListener() {
+        addDailyValues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {

@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_enterCalories" />
 
     <Button
-        android:id="@+id/button_addAll"
+        android:id="@+id/button_addDailyValues"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginTop="32dp"
@@ -102,6 +102,6 @@
         android:text="@string/button_reset_daily_values"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_addAll" />
+        app:layout_constraintTop_toBottomOf="@+id/button_addDailyValues" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

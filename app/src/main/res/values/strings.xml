@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">EasyNutritionTracker</string>
-    <string name="button_reset_daily_values">HOLD TO RESET</string>
-    <string name="button_clear_input_fields">CLEAR INPUT</string>
     <string name="text_init_showcalories">0  kcal</string>
     <string name="text_init_showcarbs">0  g</string>
     <string name="text_init_showfluids">0  ml</string>
@@ -9,6 +7,7 @@
     <string name="saved_carbs">savedCarbs</string>
     <string name="saved_fluids">savedFluids</string>
     <string name="button_add_all">ADD</string>
+    <string name="button_reset_daily_values">HOLD TO RESET</string>
     <string name="hint_enter_calories">Calories</string>
     <string name="hint_enter_carbs">Carbs</string>
     <string name="hint_enter_fluids">Fluids</string>
