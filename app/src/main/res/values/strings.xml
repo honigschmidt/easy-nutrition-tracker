@@ -3,6 +3,7 @@
     <string name="text_init_showcalories">0</string>
     <string name="text_init_showcarbs">0</string>
     <string name="text_init_showfluids">0</string>
+    <string name="text_init_showproteins">0</string>
     <string name="saved_calories">savedCalories</string>
     <string name="saved_carbs">savedCarbs</string>
     <string name="saved_fluids">savedFluids</string>
@@ -10,7 +11,8 @@
     <string name="button_reset_daily_values">HOLD TO RESET</string>
     <string name="hint_enter_calories">Calories</string>
     <string name="hint_enter_carbs">Carbs</string>
-    <string name="hint_enter_fluids">Fluids</string>
+    <string name="hint_enter_fluids">Fl uids</string>
+    <string name="hint_enter_proteins">Proteins</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
