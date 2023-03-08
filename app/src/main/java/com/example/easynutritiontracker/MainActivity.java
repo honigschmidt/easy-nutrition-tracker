@@ -2,12 +2,13 @@
 // Simple utility to track nutrition intake
 //
 // Version history:
-// 2022-10-07 v0.1   Initial test release
-// 2022-10-09 v0.2   ADD Variables are saved to disk
-//                   ADD RESET button has to be held to function
-// 2022-10-10 v0.21  FIX Screen orientation locked to portrait (code & manifest)
-// 2022-10-22 v0.22  ADD GUI improvements
-// 2023-02-09 v0.3   ADD Daily fluid intake
+// 2022-10-07 v0.10     Initial test release
+// 2022-10-09 v0.20     ADD Variables are saved to disk
+//                      ADD RESET button has to be held to function
+// 2022-10-10 v0.21     FIX Screen orientation locked to portrait (code & manifest)
+// 2022-10-22 v0.22     ADD GUI improvements
+// 2023-02-09 v0.30     ADD Daily fluid intake
+// 2023-03-08 v0.40     ADD Daily protein intake
 //
 
 package com.example.easynutritiontracker;
@@ -31,14 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private Integer calories;
     private Integer carbs;
     private Integer fluids;
+    private Integer proteins;
 
     private TextView showCalories;
     private TextView showCarbs;
     private TextView showFluids;
+    private TextView showProteins;
 
     private EditText inputCalories;
     private EditText inputCarbs;
     private EditText inputFluids;
+    private EditText inputProteins;
 
     private Button addDailyValues;
     private Button resetDailyValues;
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         calories = sharedPreferences.getInt(getResources().getString(R.string.saved_calories), getResources().getInteger(R.integer.default_calories));
         carbs = sharedPreferences.getInt(getResources().getString(R.string.saved_carbs), getResources().getInteger(R.integer.default_carbs));
         fluids = sharedPreferences.getInt(getResources().getString(R.string.saved_fluids), getResources().getInteger(R.integer.default_fluids));
+        proteins = sharedPreferences.getInt(getResources().getString(R.string.saved_proteins), getResources().getInteger(R.integer.default_proteins));
     }
 
     public void saveVariables() {
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt(getString(R.string.saved_calories), calories);
         editor.putInt(getString(R.string.saved_carbs), carbs);
         editor.putInt(getString(R.string.saved_fluids), fluids);
+        editor.putInt(getString(R.string.saved_proteins), proteins);
         editor.apply();
     }
 
@@ -62,10 +68,12 @@ public class MainActivity extends AppCompatActivity {
         showCalories = findViewById(R.id.textView_showCalories);
         showCarbs = findViewById(R.id.textView_showCarbs);
         showFluids = findViewById(R.id.textView_showFluids);
+        showProteins = findViewById(R.id.textView_showProteins);
 
         inputCalories = findViewById(R.id.editText_enterCalories);
         inputCarbs = findViewById(R.id.editText_enterCarbs);
         inputFluids = findViewById(R.id.editText_enterFluids);
+        inputProteins = findViewById(R.id.editText_enterProteins);
 
         addDailyValues = findViewById(R.id.button_addDailyValues);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
@@ -73,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
         showCalories.setText(String.valueOf(calories));
         showCarbs.setText(String.valueOf(carbs));
         showFluids.setText(String.valueOf(fluids));
+        showProteins.setText(String.valueOf(proteins));
 
         inputCalories.setCursorVisible(false);
         inputCarbs.setCursorVisible(false);
         inputFluids.setCursorVisible(false);
+        inputProteins.setCursorVisible(false);
 
         addDailyValues.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +115,14 @@ public class MainActivity extends AppCompatActivity {
                 showFluids.setText(String.valueOf(fluids));
                 inputFluids.getText().clear();
 
+                try {
+                    proteins += Integer.parseInt(inputProteins.getText().toString());
+                } catch (Exception e) {
+                    proteins += 0;
+                }
+                showProteins.setText(String.valueOf(proteins));
+                inputProteins.getText().clear();
+
                 saveVariables();
             }
         });
@@ -115,9 +133,11 @@ public class MainActivity extends AppCompatActivity {
                 calories = 0;
                 carbs = 0;
                 fluids = 0;
+                proteins = 0;
                 showCalories.setText(getResources().getString(R.string.text_init_showcalories));
                 showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
                 showFluids.setText(getResources().getString(R.string.text_init_showfluids));
+                showProteins.setText(getResources().getString(R.string.text_init_showproteins));
                 saveVariables();
                 return true;
             }

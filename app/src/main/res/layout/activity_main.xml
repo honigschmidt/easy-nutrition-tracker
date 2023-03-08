@@ -16,7 +16,8 @@
         android:layout_marginEnd="16dp"
         android:text="@string/text_init_showcalories"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,8 @@
         android:layout_marginEnd="16dp"
         android:text="@string/text_init_showcarbs"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +48,8 @@
         android:layout_marginEnd="16dp"
         android:text="@string/text_init_showfluids"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +64,8 @@
         android:layout_marginEnd="16dp"
         android:text="@string/text_init_showproteins"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,37 +75,40 @@
         android:id="@+id/editText_enterCalories"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/hint_enter_calories"
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/textView_showProteins"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_showProteins" />
 
     <EditText
         android:id="@+id/editText_enterCarbs"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hint_enter_carbs"
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/editText_enterCalories"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_enterCalories" />
 
     <EditText
         android:id="@+id/editText_enterFluids"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hint_enter_fluids"
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/editText_enterCarbs"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_enterCarbs" />
 
     <EditText
         android:id="@+id/editText_enterProteins"
@@ -121,19 +128,125 @@
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/button_add_all"
-        app:layout_constraintTop_toBottomOf="@+id/textView_showProteins"
-        tools:layout_editor_absoluteX="245dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_showProteins" />
 
     <Button
         android:id="@+id/button_resetDailyValues"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#D81B60"
         android:text="@string/button_reset_daily_values"
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/button_addDailyValues"
-        tools:layout_editor_absoluteX="245dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_addDailyValues" />
+
+    <TextView
+        android:id="@+id/textView_CaloriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/label_calories"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_showCalories"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_CaloriesKcalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_calories_kcal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_showCalories"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_CarbsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/label_carbs"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_showCarbs"
+        app:layout_constraintTop_toBottomOf="@+id/textView_CaloriesLabel" />
+
+    <TextView
+        android:id="@+id/textView_CarbsGLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_carbs_g"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_showCarbs"
+        app:layout_constraintTop_toBottomOf="@+id/textView_CaloriesKcalLabel" />
+
+    <TextView
+        android:id="@+id/textView_FluidsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/label_fluids"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_showFluids"
+        app:layout_constraintTop_toBottomOf="@+id/textView_CarbsLabel" />
+
+    <TextView
+        android:id="@+id/textView_FluidsMlLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_fluids_ml"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_showFluids"
+        app:layout_constraintTop_toBottomOf="@+id/textView_CarbsGLabel" />
+
+    <TextView
+        android:id="@+id/textView_ProteinsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/label_proteins"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_showProteins"
+        app:layout_constraintTop_toBottomOf="@+id/textView_FluidsLabel" />
+
+    <TextView
+        android:id="@+id/textView_ProteinsGLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_proteins_g"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView_showProteins"
+        app:layout_constraintTop_toBottomOf="@+id/textView_FluidsMlLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
