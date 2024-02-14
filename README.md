@@ -1,1 +1,1 @@
-Utility to track daily nutrition intake
+Android utility to track daily nutrition intake
