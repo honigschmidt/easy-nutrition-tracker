@@ -1,16 +1,3 @@
-//
-// Simple utility to track nutrition intake
-//
-// Version history:
-// 2022-10-07 v0.10     Initial test release
-// 2022-10-09 v0.20     ADD Variables are saved to disk
-//                      ADD RESET button has to be held to function
-// 2022-10-10 v0.21     FIX Screen orientation locked to portrait (code & manifest)
-// 2022-10-22 v0.22     ADD GUI improvements
-// 2023-02-09 v0.30     ADD Daily fluid intake
-// 2023-03-08 v0.40     ADD Daily protein intake
-//
-
 package com.example.easynutritiontracker;
 
 import androidx.appcompat.app.AppCompatActivity;
