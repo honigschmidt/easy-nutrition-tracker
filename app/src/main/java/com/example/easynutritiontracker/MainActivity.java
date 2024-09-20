@@ -1,17 +1,16 @@
 package com.example.easynutritiontracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
     private Button addDailyValues;
     private Button resetDailyValues;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        sharedPreferences = getPreferences(MODE_PRIVATE);
+        loadVariables();
+        runGUI();
+    }
+
     public void loadVariables() {
         calories = sharedPreferences.getInt(getResources().getString(R.string.saved_calories), getResources().getInteger(R.integer.default_calories));
         carbs = sharedPreferences.getInt(getResources().getString(R.string.saved_carbs), getResources().getInteger(R.integer.default_carbs));
@@ -48,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt(getString(R.string.saved_fluids), fluids);
         editor.putInt(getString(R.string.saved_proteins), proteins);
         editor.apply();
+    }
+
+    public boolean isMaxReached(Integer currentValue, Integer newValue) {
+        if (currentValue + newValue > 9999) {
+            return true;
+        } else return false;
     }
 
     public void runGUI() {
@@ -75,74 +90,74 @@ public class MainActivity extends AppCompatActivity {
         inputFluids.setCursorVisible(false);
         inputProteins.setCursorVisible(false);
 
-        addDailyValues.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    calories += Integer.parseInt(inputCalories.getText().toString());
-                } catch (Exception e) {
-                    calories += 0;
+        addDailyValues.setOnClickListener(view -> {
+            try {
+                Integer newValue = Integer.parseInt(inputCalories.getText().toString());
+                if (!isMaxReached(calories, newValue)) {
+                    calories += newValue;
+                } else {
+                    calories = 9999;
                 }
-                showCalories.setText(String.valueOf(calories));
-                inputCalories.getText().clear();
-
-                try {
-                    carbs += Integer.parseInt(inputCarbs.getText().toString());
-                } catch (Exception e) {
-                    carbs += 0;
-                }
-                showCarbs.setText(String.valueOf(carbs));
-                inputCarbs.getText().clear();
-
-                try {
-                    fluids += Integer.parseInt(inputFluids.getText().toString());
-                } catch (Exception e) {
-                    fluids += 0;
-                }
-                showFluids.setText(String.valueOf(fluids));
-                inputFluids.getText().clear();
-
-                try {
-                    proteins += Integer.parseInt(inputProteins.getText().toString());
-                } catch (Exception e) {
-                    proteins += 0;
-                }
-                showProteins.setText(String.valueOf(proteins));
-                inputProteins.getText().clear();
-
-                saveVariables();
+            } catch (Exception e) {
+                calories += 0;
             }
+            showCalories.setText(String.valueOf(calories));
+            inputCalories.getText().clear();
+
+            try {
+                Integer newValue = Integer.parseInt(inputCarbs.getText().toString());
+                if (!isMaxReached(carbs, newValue)) {
+                    carbs += newValue;
+                } else {
+                    carbs = 9999;
+                }
+            } catch (Exception e) {
+                carbs += 0;
+            }
+            showCarbs.setText(String.valueOf(carbs));
+            inputCarbs.getText().clear();
+
+            try {
+                Integer newValue = Integer.parseInt(inputFluids.getText().toString());
+                if (!isMaxReached(fluids, newValue)) {
+                    fluids += newValue;
+                } else {
+                    fluids = 9999;
+                }
+            } catch (Exception e) {
+                fluids += 0;
+            }
+            showFluids.setText(String.valueOf(fluids));
+            inputFluids.getText().clear();
+
+            try {
+                Integer newValue = Integer.parseInt(inputProteins.getText().toString());
+                if (!isMaxReached(proteins, newValue)) {
+                    proteins += newValue;
+                } else {
+                    proteins = 9999;
+                }
+            } catch (Exception e) {
+                proteins += 0;
+            }
+            showProteins.setText(String.valueOf(proteins));
+            inputProteins.getText().clear();
+
+            saveVariables();
         });
 
-        resetDailyValues.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                calories = 0;
-                carbs = 0;
-                fluids = 0;
-                proteins = 0;
-                showCalories.setText(getResources().getString(R.string.text_init_showcalories));
-                showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
-                showFluids.setText(getResources().getString(R.string.text_init_showfluids));
-                showProteins.setText(getResources().getString(R.string.text_init_showproteins));
-                saveVariables();
-                return true;
-            }
+        resetDailyValues.setOnLongClickListener(view -> {
+            calories = 0;
+            carbs = 0;
+            fluids = 0;
+            proteins = 0;
+            showCalories.setText(getResources().getString(R.string.text_init_showcalories));
+            showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
+            showFluids.setText(getResources().getString(R.string.text_init_showfluids));
+            showProteins.setText(getResources().getString(R.string.text_init_showproteins));
+            saveVariables();
+            return true;
         });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        sharedPreferences = getPreferences(MODE_PRIVATE);
-
-        loadVariables();
-        runGUI();
     }
 
     @Override
