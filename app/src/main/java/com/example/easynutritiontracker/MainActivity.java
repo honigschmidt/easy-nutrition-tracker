@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,12 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView showCarbs;
     private TextView showFluids;
     private TextView showProteins;
-
     private EditText inputCalories;
     private EditText inputCarbs;
     private EditText inputFluids;
     private EditText inputProteins;
-
     private Button addDailyValues;
     private Button resetDailyValues;
 
@@ -39,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         sharedPreferences = getPreferences(MODE_PRIVATE);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         loadVariables();
         runGUI();
     }
