@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.easynutritiontracker'
-    compileSdk 35
+    compileSdk 34
 
     defaultConfig {
         applicationId 'com.coffeemonster.easynutritiontracker'
         minSdk 21
-        targetSdk 35
+        targetSdk 34
         versionCode 6
         versionName '0.6'
 
