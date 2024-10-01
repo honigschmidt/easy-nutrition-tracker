@@ -21,14 +21,16 @@ public class MainActivity extends AppCompatActivity {
     private Integer fluids;
     private Integer proteins;
 
-    private TextView showCalories;
-    private TextView showCarbs;
-    private TextView showFluids;
-    private TextView showProteins;
+    private TextView displayCalories;
+    private TextView displayCarbs;
+    private TextView displayFluids;
+    private TextView displayProteins;
+
     private EditText inputCalories;
     private EditText inputCarbs;
     private EditText inputFluids;
     private EditText inputProteins;
+
     private Button addDailyValues;
     private Button resetDailyValues;
 
@@ -68,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void runGUI() {
 
-        showCalories = findViewById(R.id.textView_showCalories);
-        showCarbs = findViewById(R.id.textView_showCarbs);
-        showFluids = findViewById(R.id.textView_showFluids);
-        showProteins = findViewById(R.id.textView_showProteins);
+        displayCalories = findViewById(R.id.textView_showCalories);
+        displayCarbs = findViewById(R.id.textView_showCarbs);
+        displayFluids = findViewById(R.id.textView_showFluids);
+        displayProteins = findViewById(R.id.textView_showProteins);
 
         inputCalories = findViewById(R.id.editText_enterCalories);
         inputCarbs = findViewById(R.id.editText_enterCarbs);
@@ -81,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         addDailyValues = findViewById(R.id.button_addDailyValues);
         resetDailyValues = findViewById(R.id.button_resetDailyValues);
 
-        showCalories.setText(String.valueOf(calories));
-        showCarbs.setText(String.valueOf(carbs));
-        showFluids.setText(String.valueOf(fluids));
-        showProteins.setText(String.valueOf(proteins));
+        displayCalories.setText(String.valueOf(calories));
+        displayCarbs.setText(String.valueOf(carbs));
+        displayFluids.setText(String.valueOf(fluids));
+        displayProteins.setText(String.valueOf(proteins));
 
         inputCalories.setCursorVisible(false);
         inputCarbs.setCursorVisible(false);
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         inputProteins.setCursorVisible(false);
 
         addDailyValues.setOnClickListener(view -> {
+
             try {
                 Integer newValue = Integer.parseInt(inputCalories.getText().toString());
                 if (!isMaxReached(calories, newValue)) {
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 calories += 0;
             }
-            showCalories.setText(String.valueOf(calories));
+            displayCalories.setText(String.valueOf(calories));
             inputCalories.getText().clear();
 
             try {
@@ -115,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 carbs += 0;
             }
-            showCarbs.setText(String.valueOf(carbs));
+            displayCarbs.setText(String.valueOf(carbs));
             inputCarbs.getText().clear();
 
             try {
@@ -128,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 fluids += 0;
             }
-            showFluids.setText(String.valueOf(fluids));
+            displayFluids.setText(String.valueOf(fluids));
             inputFluids.getText().clear();
 
             try {
@@ -141,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 proteins += 0;
             }
-            showProteins.setText(String.valueOf(proteins));
+            displayProteins.setText(String.valueOf(proteins));
             inputProteins.getText().clear();
 
             saveVariables();
@@ -152,10 +155,10 @@ public class MainActivity extends AppCompatActivity {
             carbs = 0;
             fluids = 0;
             proteins = 0;
-            showCalories.setText(getResources().getString(R.string.text_init_showcalories));
-            showCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
-            showFluids.setText(getResources().getString(R.string.text_init_showfluids));
-            showProteins.setText(getResources().getString(R.string.text_init_showproteins));
+            displayCalories.setText(getResources().getString(R.string.text_init_showcalories));
+            displayCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
+            displayFluids.setText(getResources().getString(R.string.text_init_showfluids));
+            displayProteins.setText(getResources().getString(R.string.text_init_showproteins));
             saveVariables();
             return true;
         });
