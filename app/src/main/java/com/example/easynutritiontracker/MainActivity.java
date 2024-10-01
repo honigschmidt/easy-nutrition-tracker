@@ -15,7 +15,6 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SharedPreferences sharedPreferences;
     private Integer calories;
     private Integer carbs;
     private Integer fluids;
@@ -33,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button addDailyValues;
     private Button resetDailyValues;
+
+    private SharedPreferences sharedPreferences;
+    private final Integer MAX_DISPLAYABLE_VALUE = 9999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,17 +65,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean isMaxReached(Integer currentValue, Integer newValue) {
-        if (currentValue + newValue > 9999) {
-            return true;
-        } else return false;
+        return currentValue + newValue > 9999;
     }
 
     public void runGUI() {
 
-        displayCalories = findViewById(R.id.textView_showCalories);
-        displayCarbs = findViewById(R.id.textView_showCarbs);
-        displayFluids = findViewById(R.id.textView_showFluids);
-        displayProteins = findViewById(R.id.textView_showProteins);
+        displayCalories = findViewById(R.id.textView_displayCalories);
+        displayCarbs = findViewById(R.id.textView_displayCarbs);
+        displayFluids = findViewById(R.id.textView_displayFluids);
+        displayProteins = findViewById(R.id.textView_displayProteins);
 
         inputCalories = findViewById(R.id.editText_enterCalories);
         inputCarbs = findViewById(R.id.editText_enterCarbs);
@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
         addDailyValues.setOnClickListener(view -> {
 
             try {
-                Integer newValue = Integer.parseInt(inputCalories.getText().toString());
-                if (!isMaxReached(calories, newValue)) {
-                    calories += newValue;
+                int newValue = Integer.parseInt(inputCalories.getText().toString());
+                if (isMaxReached(calories, newValue)) {
+                    calories = MAX_DISPLAYABLE_VALUE;
                 } else {
-                    calories = 9999;
+                    calories += newValue;
                 }
             } catch (Exception e) {
                 calories += 0;
@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity {
             inputCalories.getText().clear();
 
             try {
-                Integer newValue = Integer.parseInt(inputCarbs.getText().toString());
-                if (!isMaxReached(carbs, newValue)) {
-                    carbs += newValue;
+                int newValue = Integer.parseInt(inputCarbs.getText().toString());
+                if (isMaxReached(carbs, newValue)) {
+                    carbs = MAX_DISPLAYABLE_VALUE;
                 } else {
-                    carbs = 9999;
+                    carbs += newValue;
                 }
             } catch (Exception e) {
                 carbs += 0;
@@ -122,11 +122,11 @@ public class MainActivity extends AppCompatActivity {
             inputCarbs.getText().clear();
 
             try {
-                Integer newValue = Integer.parseInt(inputFluids.getText().toString());
-                if (!isMaxReached(fluids, newValue)) {
-                    fluids += newValue;
+                int newValue = Integer.parseInt(inputFluids.getText().toString());
+                if (isMaxReached(fluids, newValue)) {
+                    fluids = MAX_DISPLAYABLE_VALUE;
                 } else {
-                    fluids = 9999;
+                    fluids += newValue;
                 }
             } catch (Exception e) {
                 fluids += 0;
@@ -135,11 +135,11 @@ public class MainActivity extends AppCompatActivity {
             inputFluids.getText().clear();
 
             try {
-                Integer newValue = Integer.parseInt(inputProteins.getText().toString());
-                if (!isMaxReached(proteins, newValue)) {
-                    proteins += newValue;
+                int newValue = Integer.parseInt(inputProteins.getText().toString());
+                if (isMaxReached(proteins, newValue)) {
+                    proteins = MAX_DISPLAYABLE_VALUE;
                 } else {
-                    proteins = 9999;
+                    proteins += newValue;
                 }
             } catch (Exception e) {
                 proteins += 0;
@@ -155,10 +155,10 @@ public class MainActivity extends AppCompatActivity {
             carbs = 0;
             fluids = 0;
             proteins = 0;
-            displayCalories.setText(getResources().getString(R.string.text_init_showcalories));
-            displayCarbs.setText(getResources().getString(R.string.text_init_showcarbs));
-            displayFluids.setText(getResources().getString(R.string.text_init_showfluids));
-            displayProteins.setText(getResources().getString(R.string.text_init_showproteins));
+            displayCalories.setText(getResources().getString(R.string.text_init_displaycalories));
+            displayCarbs.setText(getResources().getString(R.string.text_init_displaycarbs));
+            displayFluids.setText(getResources().getString(R.string.text_init_displayfluids));
+            displayProteins.setText(getResources().getString(R.string.text_init_displayproteins));
             saveVariables();
             return true;
         });
