@@ -8,10 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!-- Custom colors -->
-    <color name="ent_navy_dark">#0F4C75</color>
-    <color name="ent_navy_light">#3282B8</color>
-    <color name="ent_light_blue">#3EC1D3</color>
-    <color name="ent_cream">#F6F7D7</color>
-    <color name="ent_orange">#FF9A00</color>
-    <color name="ent_red">#FF165D</color>
+    <color name="ent_dark_blue">#2D7ABE</color>
+    <color name="ent_p_light_blue">#3EC1D3</color>
+    <color name="ent_p_cream">#F6F7D7</color>
+    <color name="ent_p_orange">#FF9A00</color>
+    <color name="ent_p_red">#FF165D</color>
 </resources>

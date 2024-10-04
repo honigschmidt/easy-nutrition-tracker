@@ -15,6 +15,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/Theme.EasyNutritionTracker"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Easy Nutrition Tracker"
@@ -145,7 +146,10 @@
         android:layout_marginEnd="16dp"
         android:text="@string/button_add_all"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_displayProteins" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_displayProteins"
+        android:stateListAnimator="@null"
+        android:elevation="2dp"
+        android:translationZ="2dp" />
 
     <Button
         android:id="@+id/button_resetDailyValues"
@@ -157,7 +161,10 @@
         android:text="@string/button_reset_daily_values"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_addDailyValues" />
+        app:layout_constraintTop_toBottomOf="@+id/button_addDailyValues"
+        android:stateListAnimator="@null"
+        android:elevation="2dp"
+        android:translationZ="2dp" />
 
     <TextView
         android:id="@+id/textView_CaloriesLabel"

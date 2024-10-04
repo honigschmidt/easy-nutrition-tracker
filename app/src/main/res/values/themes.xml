@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.EasyNutritionTracker" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/ent_orange</item>
+        <item name="colorPrimary">@color/ent_p_orange</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/ent_light_blue</item>
+        <item name="colorSecondary">@color/ent_dark_blue</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">?attr/colorSecondary</item>
     </style>
