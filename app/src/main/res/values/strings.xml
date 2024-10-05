@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EasyNutritionTracker</string>
+    <string name="app_name">Easy Nutrition Tracker</string>
     <string name="text_init_displaycalories">0</string>
     <string name="text_init_displaycarbs">0</string>
     <string name="text_init_displayfluids">0</string>
