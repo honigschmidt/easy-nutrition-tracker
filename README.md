@@ -1,2 +1,2 @@
 Android utility to track daily nutrition intake. Check screenshot for details.\
-Launcher icon by [Arafat Uddin](https://www.flaticon.com/authors/arafat-uddin) on Flaticon.
+Available on [Google Play](https://play.google.com/store/apps/details?id=com.coffeemonster.easynutritiontracker)
