@@ -23,248 +23,251 @@
         app:titleTextColor="#FFFFFF" />
 
     <LinearLayout
-        android:id="@+id/linearLayout_topContainer"
+        android:id="@+id/linearLayout_mainContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:orientation="horizontal"
-        android:paddingRight="40dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
-            android:id="@+id/linearLayout_label"
+            android:id="@+id/linearLayout_topContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:paddingRight="40dp">
 
-            <TextView
-                android:id="@+id/textView_CaloriesLabel"
+            <LinearLayout
+                android:id="@+id/linearLayout_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_calories"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:gravity="right"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_CarbsLabel"
+                <TextView
+                    android:id="@+id/textView_CaloriesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_calories"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_CarbsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_carbs"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_FluidsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_fluids"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_ProteinsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_proteins"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_carbs"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_FluidsLabel"
+                <TextView
+                    android:id="@+id/textView_displayCalories"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/text_init_displaycalories"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_displayCarbs"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/text_init_displaycarbs"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_displayFluids"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/text_init_displayfluids"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_displayProteins"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_init_displayproteins"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_fluids"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:gravity="left"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_ProteinsLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_proteins"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView_CaloriesKcalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_calories_kcal"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_CarbsGLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_carbs_g"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_FluidsMlLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/label_fluids_ml"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_ProteinsGLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_proteins_g"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout_display"
+            android:id="@+id/linearLayout_bottomContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="268dp">
 
-            <TextView
-                android:id="@+id/textView_displayCalories"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/text_init_displaycalories"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_displayCarbs"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/text_init_displaycarbs"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_displayFluids"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/text_init_displayfluids"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView_displayProteins"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="@string/text_init_displayproteins"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_unit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_CaloriesKcalLabel"
+            <LinearLayout
+                android:id="@+id/linearLayout_editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_calories_kcal"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_CarbsGLabel"
+                <EditText
+                    android:id="@+id/editText_enterCalories"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_enter_calories"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText_enterCarbs"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_enter_carbs"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText_enterFluids"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_enter_fluids"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText_enterProteins"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hint_enter_proteins"
+                    android:inputType="number"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_carbs_g"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_FluidsMlLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/label_fluids_ml"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button_addDailyValues"
+                    android:layout_width="150dp"
+                    android:layout_height="75dp"
+                    android:layout_marginBottom="8dp"
+                    android:elevation="2dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_add_all"
+                    android:translationZ="2dp" />
 
-            <TextView
-                android:id="@+id/textView_ProteinsGLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_proteins_g"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button_resetDailyValues"
+                    android:layout_width="150dp"
+                    android:layout_height="75dp"
+                    android:backgroundTint="#D81B60"
+                    android:elevation="2dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_reset_daily_values"
+                    android:textSize="12sp"
+                    android:translationZ="2dp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_bottomContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_topContainer">
-
-        <LinearLayout
-            android:id="@+id/linearLayout_editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/editText_enterCalories"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:ems="10"
-                android:hint="@string/hint_enter_calories"
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editText_enterCarbs"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:ems="10"
-                android:hint="@string/hint_enter_carbs"
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editText_enterFluids"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:ems="10"
-                android:hint="@string/hint_enter_fluids"
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/editText_enterProteins"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/hint_enter_proteins"
-                android:inputType="number"
-                android:textAlignment="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button_addDailyValues"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:layout_marginBottom="8dp"
-                android:elevation="2dp"
-                android:stateListAnimator="@null"
-                android:text="@string/button_add_all"
-                android:translationZ="2dp" />
-
-            <Button
-                android:id="@+id/button_resetDailyValues"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:backgroundTint="#D81B60"
-                android:elevation="2dp"
-                android:stateListAnimator="@null"
-                android:text="@string/button_reset_daily_values"
-                android:textSize="12sp"
-                android:translationZ="2dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
