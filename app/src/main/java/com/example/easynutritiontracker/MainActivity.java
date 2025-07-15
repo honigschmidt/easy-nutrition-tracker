@@ -2,7 +2,6 @@ package com.example.easynutritiontracker;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
@@ -166,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
             displayCarbs.setText(getResources().getString(R.string.text_init_displaycarbs));
             displayFluids.setText(getResources().getString(R.string.text_init_displayfluids));
             displayProteins.setText(getResources().getString(R.string.text_init_displayproteins));
+            inputCalories.getText().clear();
+            inputCarbs.getText().clear();
+            inputFluids.getText().clear();
+            inputProteins.getText().clear();
             saveVariables();
             return true;
         });
